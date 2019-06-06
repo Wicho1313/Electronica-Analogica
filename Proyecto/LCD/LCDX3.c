@@ -1,0 +1,51 @@
+#include <16F887.h>            // Utilizamos el PIC 16F887
+#device ADC=10                         // Usa resolución de 10 bits
+#use delay(clock=8M)       // Cristal a utilizar
+
+#FUSES NOWDT, INTRC_IO, NOMCLR
+#include <lcd.c>
+
+
+void main ()
+{
+   float temper,medicion,voltaje;
+   
+   lcd_init();                      // Inicia LCD
+   
+   lcd_putc ("\f");   
+   lcd_putc(" Termometro\n");       // Saca texto
+   lcd_putc(" con LM35");           // Saca texto
+   delay_ms(2000);
+   lcd_putc ("\f");   
+   lcd_putc("Temp  ");              // Saca texto
+   delay_ms(1000); 
+   lcd_gotoxy(12,1);                // Acomoda cursor LCD
+   lcd_putc("oC\n");// 
+   lcd_putc("volt cas ");
+   
+   set_tris_a(0b00000001);          //Pongo el RA0 como entrada
+   set_tris_d(0);                   //Pongo el Puerto D como Salida
+   setup_adc_ports(all_analog);     //Pongo todo el puerto a analogo
+   setup_adc(adc_clock_internal);   //Selecciono reloj interno para conversion
+   
+   while (1)
+    {  
+    lcd_gotoxy(6,1);                // Acomoda cursor LCD
+    lcd_putc(" ");                  // Limpia ese sector de pantalla
+    lcd_gotoxy(6,1);                // Acomoda cursor LCD
+    
+    set_adc_channel(0);            // Elige canal a medir RA0
+    delay_us(20);
+    medicion=read_adc();           // Hace conversión AD 
+    temper=medicion*(0.048875);       // Pasa binario a °C
+    voltaje=medicion*(0.004888);
+    //**********************************************************//
+    printf(lcd_putc," %02.3f",temper);   // xxx.x °C
+    delay_ms (1000);
+    lcd_gotoxy(10,2);               // Acomoda cursor LCD
+    lcd_putc(" ");                  // Limpia ese sector de pantalla
+    lcd_gotoxy(10,2);               // Acomoda cursor LCD
+    printf(lcd_putc,"%02.2f v",voltaje);
+    }
+}
+
