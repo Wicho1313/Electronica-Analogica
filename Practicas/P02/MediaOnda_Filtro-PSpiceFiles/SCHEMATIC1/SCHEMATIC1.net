@@ -1,0 +1,15 @@
+* source MEDIAONDA_FILTRO
+L_L1         0 N00149  10uH  
+L_L2         N000520 N01726  10uH  
+R_R1         N00142 N00149  0.02 TC=0,0 
+R_R2         0 N01672  100 TC=0,0 
+V_V1         N00142 0  AC 0
++SIN 0 127 60 0 0 0
+D_D1         N01726 N01672 D1N4003 
+Kn_K1         L_L1 L_L2 
++ L_L3    1
+L_L3         N01737 N000520  10uH  
+D_D2         N01737 N01672 D1N4003 
+D_D3         0 N01726 D1N4003 
+D_D4         0 N01737 D1N4003 
+C_C1         N01672 0  2200u  

@@ -1,0 +1,131 @@
+
+**** 02/27/19 19:35:07 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Transformador"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\Rectificadores-PSpiceFiles\SCHEMATI
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Transformador.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Wicho\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 60ms 0 50u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source RECTIFICADORES
+D_D1         N01240 N00114 D1N4003 
+R_R1         0 N00114  100 TC=0,0 
+V_V1         N00888 0  AC 0
++SIN 0 127 60 0 0 0
+R_R2         N00888 N01077  0.01 TC=0,0 
+L_L1         0 N01077  10uH  
+L_L2         0 N01240  10uH  
+Kn_K1         L_L1 L_L2     1
+Kn_K2         L_L1 L_L2 
++ L_L3 L_L4   1
+L_L4         0 N02319  10uH  
+V_V2         N02303 0  AC 0
++SIN 0 127 60 0 0 0
+R_R3         N02303 N02313  0.01 TC=0,0 
+L_L3         0 N02313  10uH  
+R_R4         0 N02319  100 TC=0,0 
+
+**** RESUMING Transformador.cir ****
+.END
+
+**** 02/27/19 19:35:07 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Transformador"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\Rectificadores-PSpiceFiles\SCHEMATI
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4003         D1N4001         
+          IS   14.110000E-09   14.110000E-09 
+           N    1.984           1.984        
+         IKF   94.81           94.81         
+          BV  300              75            
+         IBV   10.000000E-06   10.000000E-06 
+          RS     .03389          .03389      
+          TT    5.700000E-06    5.700000E-06 
+         CJO   25.890000E-12   25.890000E-12 
+          VJ     .3245           .3245       
+           M     .44             .44         
+
+
+**** 02/27/19 19:35:07 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Transformador"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\Rectificadores-PSpiceFiles\SCHEMATI
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00114)-151.3E-24 (N00888)    0.0000 (N01077)    0.0000 (N01240)    0.0000     
+
+(N02303)    0.0000 (N02313)    0.0000 (N02319)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V2         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+
+          JOB ABORTED
+
+**** 02/27/19 19:35:07 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-Transformador"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\Rectificadores-PSpiceFiles\SCHEMATI
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =      205.31
+

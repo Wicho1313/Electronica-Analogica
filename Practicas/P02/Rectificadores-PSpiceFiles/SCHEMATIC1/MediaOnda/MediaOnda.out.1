@@ -1,0 +1,59 @@
+
+**** 02/27/19 19:26:20 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-MediaOnda"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\rectificadores-pspicefiles\schematic1\m
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "MediaOnda.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Wicho\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 60ms 0 50u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source RECTIFICADORES
+D_D1         N01240 N00114 D1N4003 
+R_R1         0 N00114  100 TC=0,0 
+V_V1         N00888 N00906  AC 0
++SIN 0 127 60 0 0 0
+R_R2         N00888 N01077  0.01 TC=0,0 
+L_L1         N00906 N01077  10uH  
+L_L2         0 N01240  10uH  
+Kn_K1         L_L1 L_L2     1
+Kn_K2         L_L1 L_L2     1
+L_L4         0 N02319  10uH  
+V_V2         N02303 0  AC 0
++SIN 0 127 60 0 0 0
+R_R3         N02303 N02313  0.01 TC=0,0 
+R_R4         0 N02746  100 TC=0,0 
+L_L3         0 N02313  10uH  
+D_D2         N02319 N02746 D1N4003 
+
+**** RESUMING MediaOnda.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N00888 is floating
+
+ERROR(ORPSIM-15142): Node N00906 is floating
+
+ERROR(ORPSIM-15142): Node N01077 is floating
+

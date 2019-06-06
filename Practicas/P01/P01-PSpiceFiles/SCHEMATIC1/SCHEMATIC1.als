@@ -1,0 +1,4 @@
+.ALIASES
+D_D1            D1(1=N00097 2=0 ) CN @P01.SCHEMATIC1(sch_1):INS26@DIODE.D1N4004.Normal(chips)
+V_V1            V1(+=N00097 -=0 ) CN @P01.SCHEMATIC1(sch_1):INS81@SOURCE.VDC.Normal(chips)
+.ENDALIASES

@@ -1,0 +1,51 @@
+
+**** 02/27/19 19:58:00 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-MediaOnda_Filtro"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\MediaOnda_Filtro-PSpiceFiles\SCH
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "MediaOnda_Filtro.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Wicho\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 60ms 0 50u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MEDIAONDA_FILTRO
+L_L1         0 N00149  10uH  
+L_L2         0 N00160  10uH  
+R_R1         N00142 N00149  0.02 TC=0,0 
+R_R2         0 N00389  22 TC=0,0 
+V_V1         N00142 0  AC 0
++SIN 0 127 60 0 0 0
+D_D1         N00160 N00389 D1N4003 
+Kn_K1         L_L1 L_L2 
++ L_L3    1
+
+**** RESUMING MediaOnda_Filtro.cir ****
+.END
+
+
+ERROR(ORPSIM-15090):  device L_L3 is undefined
+
+ERROR(ORPSIM-15090):  device L_L3 is undefined
+

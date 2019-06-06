@@ -1,0 +1,28 @@
+* source RECTIFICADORES
+D_D1         N01240 N00114 D1N4003 
+R_R1         0 N00114  100 TC=0,0 
+V_V1         N00888 0  AC 0
++SIN 0 127 60 0 0 0
+R_R2         N00888 N01077  0.01 TC=0,0 
+L_L1         0 N01077  10uH  
+L_L2         0 N01240  10uH  
+Kn_K1         L_L1 L_L2     1
+Kn_K2         L_L1 L_L2 
++ L_L3 L_L4   1
+L_L4         0 N02319  10uH  
+V_V2         N02303 0  AC 0
++SIN 0 127 60 0 0 0
+R_R3         N02303 N02313  0.01 TC=0,0 
+L_L3         0 N02313  10uH  
+R_R4         0 N02319  100 TC=0,0 
+R_R5         0 N03414  100 TC=0,0 
+R_R6         N03274 N03288  0.02 TC=0,0 
+L_L2         N03317 N03410  10uH  
+L_L1         0 N03288  10uH  
+V_V3         N03274 0  AC 0
++SIN 0 127 60 0 0 0
+L_L3         0 N03317  10uH  
+C_C1         N03414 0  1n  
+D_D2         N03410 N03414 D1N4003 
+Kn_K3         L_L1 L_L2 
++ L_L3    1

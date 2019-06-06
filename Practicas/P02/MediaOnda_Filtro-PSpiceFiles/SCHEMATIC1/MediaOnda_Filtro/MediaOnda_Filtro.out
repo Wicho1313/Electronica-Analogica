@@ -1,0 +1,124 @@
+
+**** 02/27/19 20:49:47 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-MediaOnda_Filtro"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\MediaOnda_Filtro-PSpiceFiles\SCH
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "MediaOnda_Filtro.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Wicho\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\17.2.0\PSpice.ini file:
+.lib "nomd.lib" 
+
+*Analysis directives: 
+.TRAN  0 60ms 0 50u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MEDIAONDA_FILTRO
+L_L1         0 N00149  10uH  
+L_L2         N000520 N01726  10uH  
+R_R1         N00142 N00149  0.02 TC=0,0 
+R_R2         0 N01672  100 TC=0,0 
+V_V1         N00142 0  AC 0
++SIN 0 127 60 0 0 0
+D_D1         N01726 N01672 D1N4003 
+Kn_K1         L_L1 L_L2 
++ L_L3    1
+L_L3         N01737 N000520  10uH  
+D_D2         N01737 N01672 D1N4003 
+D_D3         0 N01726 D1N4003 
+D_D4         0 N01737 D1N4003 
+C_C1         N01672 0  2200u  
+
+**** RESUMING MediaOnda_Filtro.cir ****
+.END
+
+**** 02/27/19 20:49:47 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-MediaOnda_Filtro"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\MediaOnda_Filtro-PSpiceFiles\SCH
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4003         D1N4001         
+          IS   14.110000E-09   14.110000E-09 
+           N    1.984           1.984        
+         IKF   94.81           94.81         
+          BV  300              75            
+         IBV   10.000000E-06   10.000000E-06 
+          RS     .03389          .03389      
+          TT    5.700000E-06    5.700000E-06 
+         CJO   25.890000E-12   25.890000E-12 
+          VJ     .3245           .3245       
+           M     .44             .44         
+
+
+**** 02/27/19 20:49:47 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-MediaOnda_Filtro"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\MediaOnda_Filtro-PSpiceFiles\SCH
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N00142)    0.0000 (N00149)    0.0000 (N01672) 10.66E-24 (N01726)-794.4E-21     
+
+(N01737)-794.4E-21 (N000520)-794.4E-21                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 02/27/19 20:49:47 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ ** Profile: "SCHEMATIC1-MediaOnda_Filtro"  [ C:\Users\Wicho\Documents\ESCOM\Analogica\Practicas\P02\MediaOnda_Filtro-PSpiceFiles\SCH
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .08
+
